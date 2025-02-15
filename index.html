@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,15 @@
     <title>Mohammad Hafeez Khan - AI/ML Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Previous CSS remains the same, add these new styles */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
         .profile-img {
             width: 200px;
             height: 200px;
@@ -15,6 +24,18 @@
             border: 4px solid #0077b5;
         }
         
+        .bio {
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .education, .projects {
+            margin-top: 2rem;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -29,6 +50,10 @@
             border-radius: 8px;
             text-align: center;
         }
+
+        .contact-links a {
+            margin-right: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -42,44 +67,43 @@
         </ul>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <!-- Add your photo here -->
+    <section class="container">
+        <div>
             <img src="hafeez photo.jpg" alt="Mohammad Hafeez Khan" class="profile-img">
-            <h1>Mohammad Hafeez Khan</h1>
-            <p>MSc Artificial Intelligence | Machine Learning Specialist</p>
+            <div class="bio">
+                <h1>Mohammad Hafeez Khan</h1>
+                <p>MSc Artificial Intelligence | Machine Learning Specialist</p>
+            </div>
+            <section class="section education">
+                <h2>Education</h2>
+                <div>
+                    <h3>University of Amsterdam</h3>
+                    <p>MSc in Artificial Intelligence</p>
+                    <p>Coursework: Machine Learning, Computer Vision, Deep Learning, NLP</p>
+                </div>
+                <div>
+                    <h3>Queen Mary University of London</h3>
+                    <p>MSc Data Science & AI (Distinction)</p>
+                    <p>Python, Statistics, ML, Deep Learning, Information Retrieval</p>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section class="section" id="education">
-        <h2>Education</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>University of Amsterdam</h3>
-                <p>MSc in Artificial Intelligence</p>
-                <p>Coursework: Machine Learning, Computer Vision, Deep Learning, NLP</p>
-            </div>
-            <div class="project-card">
-                <h3>Queen Mary University of London</h3>
-                <p>MSc Data Science & AI (Distinction)</p>
-                <p>Python, Statistics, ML, Deep Learning, Information Retrieval</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="projects">
-        <h2>Research Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Multilingual Neural Machine Translation</h3>
-                <p>Developed transformer-based NMT for low-resource Indian languages</p>
-                <p>Technologies: PyTorch, HuggingFace, Transfer Learning</p>
-            </div>
-            <div class="project-card">
-                <h3>CIFAR-10 Classification</h3>
-                <p>Deep Learning model achieving 90% accuracy</p>
-                <p>CNN architectures, Hyperparameter tuning</p>
-            </div>
+        <div>
+            <section class="section projects">
+                <h2>Research Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Multilingual Neural Machine Translation</h3>
+                        <p>Developed transformer-based NMT for low-resource Indian languages</p>
+                        <p>Technologies: PyTorch, HuggingFace, Transfer Learning</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>CIFAR-10 Classification</h3>
+                        <p>Deep Learning model achieving 90% accuracy</p>
+                        <p>CNN architectures, Hyperparameter tuning</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </section>
 
