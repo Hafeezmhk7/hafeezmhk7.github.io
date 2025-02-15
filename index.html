@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,52 +6,119 @@
     <title>Mohammad Hafeez Khan - AI/ML Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
         .container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 80px auto 0;
             padding: 2rem;
         }
-        
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
         .profile-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            margin-bottom: 1.5rem;
             border: 4px solid #0077b5;
         }
-        
+
         .bio {
-            margin-bottom: 2rem;
+            align-self: center;
+        }
+
+        .bio h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio p {
+            color: #666;
+            line-height: 1.6;
         }
 
         .section {
+            margin-bottom: 3rem;
+        }
+
+        .education, .projects {
             margin-bottom: 2rem;
         }
-        
-        .education, .projects {
+
+        .project-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
             margin-top: 2rem;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .skill-item {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
         .contact-links a {
-            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #0077b5;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 1rem;
+            }
         }
     </style>
 </head>
@@ -62,79 +128,74 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="container">
-        <div>
+    <div class="container">
+        <section class="profile-section" id="home">
             <img src="hafeez photo.jpg" alt="Mohammad Hafeez Khan" class="profile-img">
             <div class="bio">
                 <h1>Mohammad Hafeez Khan</h1>
-                <p>MSc Artificial Intelligence | Machine Learning Specialist</p>
+                <p>MSc Artificial Intelligence graduate specializing in Machine Learning and Natural Language Processing. Experienced in developing transformer-based models and deep learning solutions. Passionate about solving complex problems through data-driven approaches.</p>
             </div>
-            <section class="section education">
-                <h2>Education</h2>
-                <div>
-                    <h3>University of Amsterdam</h3>
-                    <p>MSc in Artificial Intelligence</p>
-                    <p>Coursework: Machine Learning, Computer Vision, Deep Learning, NLP</p>
-                </div>
-                <div>
-                    <h3>Queen Mary University of London</h3>
-                    <p>MSc Data Science & AI (Distinction)</p>
-                    <p>Python, Statistics, ML, Deep Learning, Information Retrieval</p>
-                </div>
-            </section>
-        </div>
-        <div>
-            <section class="section projects">
-                <h2>Research Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Multilingual Neural Machine Translation</h3>
-                        <p>Developed transformer-based NMT for low-resource Indian languages</p>
-                        <p>Technologies: PyTorch, HuggingFace, Transfer Learning</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>CIFAR-10 Classification</h3>
-                        <p>Deep Learning model achieving 90% accuracy</p>
-                        <p>CNN architectures, Hyperparameter tuning</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
+        </section>
 
-    <section class="section" id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <h4>Machine Learning</h4>
-                <p>PyTorch, TensorFlow, Scikit-learn</p>
+        <section class="education" id="education">
+            <h2>Education</h2>
+            <div class="project-card">
+                <h3>University of Amsterdam</h3>
+                <p>MSc in Artificial Intelligence</p>
+                <p><strong>Relevant Coursework:</strong> Machine Learning, Computer Vision, Deep Learning, Natural Language Processing</p>
             </div>
-            <div class="skill-item">
-                <h4>NLP</h4>
-                <p>Transformers, BERT, NMT</p>
+            <div class="project-card">
+                <h3>Queen Mary University of London</h3>
+                <p>MSc Data Science & Artificial Intelligence (Distinction)</p>
+                <p><strong>Key Subjects:</strong> Python Programming, Advanced Statistics, Machine Learning, Deep Learning & Neural Networks</p>
             </div>
-            <div class="skill-item">
-                <h4>Data Science</h4>
-                <p>Pandas, NumPy, Data Visualization</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section" id="contact">
-        <h2>Contact</h2>
-        <div class="contact-links">
-            <a href="mailto:hafeezmhk6@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/hafeezmhk7" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/hafeez7634" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="hafeez-cv.pdf" download><i class="fas fa-file-pdf"></i></a>
-        </div>
-    </section>
+        <section class="projects" id="projects">
+            <h2>Research Projects</h2>
+            <div class="project-card">
+                <h3>Multilingual Neural Machine Translation</h3>
+                <p>Developed transformer-based NMT system for low-resource Indian languages using PyTorch and HuggingFace. Implemented transfer learning techniques to improve translation accuracy for Bodo, Dogri, Maithili, and Konkani languages.</p>
+            </div>
+            <div class="project-card">
+                <h3>CIFAR-10 Image Classification</h3>
+                <p>Designed CNN architecture achieving 90% accuracy through hyperparameter optimization. Implemented custom layer combinations and regularization techniques.</p>
+            </div>
+        </section>
 
-    <!-- Keep previous JavaScript -->
+        <section class="contact" id="contact">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:hafeezmhk6@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/hafeezmhk7" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/hafeez7634" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="hafeez-cv.pdf" download title="Download CV">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
