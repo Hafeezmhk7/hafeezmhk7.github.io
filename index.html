@@ -167,18 +167,18 @@
         <h1 class="name">Mohammad Hafeez Khan</h1>
         <p>
           I work on <strong>computer vision</strong>, mainly on <strong>learned representations of 3D scenes</strong>.
-          From 2024 to 2026 I was at the <a href="https://www.uva.nl/en">University of Amsterdam</a>, where my main project,
-          with Yue Li and Prof. Martin R. Oswald, was an autoencoder over 3D Gaussian Splatting scenes:
-          it compresses a scene into a compact latent and decodes it back. I also built the differentiable rendering
-          pipeline that supervises it in image space, working through camera poses, intrinsics and rendered depth myself.
+          From 2024 to 2026 I was at the <a href="https://www.uva.nl/en">University of Amsterdam</a>, where my main project
+          was an autoencoder over 3D Gaussian Splatting scenes: it compresses a scene into a compact latent and decodes it back.
+          I also built the differentiable rendering pipeline that supervises it in image space, working through camera poses,
+          intrinsics and rendered depth.
         </p>
         <p>
           At UvA I also worked on detecting AI-generated faces with CLIP and latent reconstruction errors
           (ACM workshop paper), on a mechanistic-interpretability reproduction study of how language models handle
-          facts and counterfactuals (<em>TMLR</em>), on diffusion transformers and on multi-modal generative recommendation.
+          facts and counterfactuals (<em>TMLR</em>), and on multi-modal generative recommendation.
           Before that, I completed an MSc in Data Science &amp; AI with Distinction at
-          <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a>, working with
-          Prof. Shalom Lappin on low-resource machine translation.
+          <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a>, where my thesis was on
+          machine translation for low-resource languages.
         </p>
         <p>
           My first degree is a B.Tech in Engineering Physics from <a href="https://www.nita.ac.in/">NIT Agartala</a>
@@ -313,24 +313,15 @@
     <section>
       <h2>Research Experience &amp; Projects</h2>
 
-      <div class="entry" id="blip3o">
-        <div class="thumb"><div class="placeholder"><b>DiT</b>EVA-CLIP &rarr; CLIP<br>rectified flow</div></div>
-        <div class="entry-body">
-          <div class="title">BLIP3-o DiT: Cross-Modal CLIP Embedding Reproduction</div>
-          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
-          <div class="venue">Research project, University of Amsterdam, Jul&ndash;Aug 2025</div>
-          <div class="authors">Supervisor: Dr. Andrii Zadaianchuk</div>
-          <p>Built a Diffusion Transformer that replicates the BLIP3-o pipeline, generating CLIP embeddings from EVA-CLIP features. It uses 3D RoPE, Heun's solver, grouped-query attention and an EVA adapter for embedding-space alignment, and was trained with FSDP on Snellius H100 GPUs. With sandwich normalisation, layer scaling and rectified flow matching it reaches 89.89% CLIP similarity on training data and 88.76% on MS-COCO validation.</p>
-        </div>
-      </div>
 
       <div class="entry" id="semantic-ids">
-        <div class="thumb"><div class="placeholder"><b>RecSys</b>CLIP + Sentence-T5<br>RQ-VAE semantic IDs</div></div>
+        <div class="thumb"><img src="images/semantic-ids.jpg" alt="Building multi-modal semantic IDs: text and image embeddings fused before RQ-VAE quantisation" loading="lazy"></div>
         <div class="entry-body">
-          <div class="title">Multi-Modal Semantic Item Identifiers for Generative Recommendation</div>
+          <div class="title"><a href="files/multimodal-semantic-ids.pdf">Multi-Modal Semantic Item Identifiers for Generative Recommendation</a></div>
           <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
           <div class="venue">Research project, University of Amsterdam, May&ndash;Dec 2025</div>
           <div class="authors">Supervisor: Kidist Amde Mekonnen</div>
+          <div class="entry-links"><a href="files/multimodal-semantic-ids.pdf">report (pdf)</a><span class="sep">/</span><a href="https://anonymous.4open.science/r/MMGenRec-24F8">code</a></div>
           <p>Fused CLIP visual features with Sentence-T5 text embeddings before RQ-VAE quantisation, keeping the TIGER retriever fixed so that any change comes from the visual semantics alone. Across eight Amazon categories (2014 and 2023), images help a lot where appearance distinguishes items (Sports, Toys, Video Games) and little or not at all in text-centric ones such as Software. I also brought beyond-accuracy metrics (coverage, Gini exposure, user-level disparity) into the semantic-ID setting. They reveal a trade-off: broader catalogue coverage can come with more concentrated exposure.</p>
         </div>
       </div>
