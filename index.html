@@ -1,375 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Hafeez Khan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammad Hafeez Khan</title>
+  <meta name="description" content="Mohammad Hafeez Khan: AI researcher working on 3D scene generation, vision-language models and generated-image detection. Looking for PhD positions.">
+  <meta name="author" content="Mohammad Hafeez Khan">
+  <meta property="og:title" content="Mohammad Hafeez Khan">
+  <meta property="og:description" content="AI researcher working on 3D vision, generative models and vision-language models.">
+  <meta property="og:image" content="images/hafeez.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5f6368;
+      --link: #1772d0;
+      --link-hover: #f09228;
+      --highlight: #fffbe6;
+      --border: #e6e6e6;
+      --code-bg: #f6f8fa;
+      --thumb-bg: #f3f4f6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #16181c;
+        --text: #e6e6e6;
+        --muted: #a0a4ab;
+        --link: #6fb0ff;
+        --link-hover: #ffb35c;
+        --highlight: #2a2617;
+        --border: #2e3238;
+        --code-bg: #1f2227;
+        --thumb-bg: #ffffff;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16181c;
+      --text: #e6e6e6;
+      --muted: #a0a4ab;
+      --link: #6fb0ff;
+      --link-hover: #ffb35c;
+      --highlight: #2a2617;
+      --border: #2e3238;
+      --code-bg: #1f2227;
+      --thumb-bg: #ffffff;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover, a:focus { color: var(--link-hover); }
+    strong { font-weight: 700; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    .page { max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }
 
-        /* Header Section */
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
+    /* Header */
+    .intro { display: flex; gap: 32px; align-items: center; }
+    .intro-text { flex: 1 1 auto; min-width: 0; }
+    .name { font-size: 32px; font-weight: 400; text-align: center; margin: 0 0 18px; }
+    .intro-text p { margin: 0 0 14px; }
+    .links { text-align: center; margin-top: 18px; }
+    .links a { white-space: nowrap; }
+    .links .sep { color: var(--muted); margin: 0 6px; }
+    .photo { flex: 0 0 34%; max-width: 280px; }
+    .photo img {
+      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 20%;
+      border-radius: 50%; display: block;
+    }
+    .status {
+      display: inline-block; margin-top: 4px; padding: 2px 10px; border-radius: 999px;
+      background: var(--highlight); border: 1px solid var(--border); font-size: 14px;
+    }
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            color: #000;
-        }
+    /* Sections */
+    h2 { font-size: 22px; font-weight: 400; margin: 44px 0 12px; }
+    .section-note { color: var(--muted); margin: 0 0 8px; }
+    .news { list-style: none; padding: 0; margin: 0; }
+    .news li { display: flex; gap: 14px; padding: 4px 0; }
+    .news .date { flex: 0 0 76px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-        .tagline {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
+    /* Entries (publications, theses, projects) */
+    .entry { display: flex; gap: 24px; padding: 16px 12px; margin: 0 -12px; border-radius: 8px; }
+    .entry.featured { background: var(--highlight); }
+    .thumb { flex: 0 0 200px; align-self: flex-start; }
+    .thumb img {
+      width: 200px; height: 130px; object-fit: contain; display: block;
+      background: var(--thumb-bg); border: 1px solid var(--border); border-radius: 6px; padding: 4px;
+    }
+    .thumb .placeholder {
+      width: 200px; height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border: 1px solid var(--border); border-radius: 6px; background: var(--code-bg);
+      color: var(--muted); text-align: center; font-size: 13px; padding: 8px;
+    }
+    .thumb .placeholder b { font-size: 22px; color: var(--text); font-weight: 700; letter-spacing: 0.5px; }
+    .entry-body { flex: 1 1 auto; min-width: 0; }
+    .title { font-weight: 700; font-size: 16px; }
+    .authors, .venue { margin-top: 2px; }
+    .venue { font-style: italic; }
+    .me { font-weight: 700; }
+    .entry-links { margin-top: 4px; }
+    .entry-links a, .entry-links button { margin-right: 4px; }
+    .entry-links .sep { color: var(--muted); margin: 0 4px 0 0; }
+    .entry p { margin: 8px 0 0; }
+    .badge {
+      display: inline-block; font-size: 12px; font-style: normal; padding: 0 7px; margin-left: 6px;
+      border: 1px solid var(--border); border-radius: 4px; color: var(--muted); vertical-align: 1px;
+    }
+    button.bib-toggle {
+      font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer;
+    }
+    button.bib-toggle:hover { color: var(--link-hover); }
+    pre.bibtex {
+      display: none; margin: 10px 0 0; padding: 10px 12px; background: var(--code-bg);
+      border: 1px solid var(--border); border-radius: 6px; font-size: 12px; line-height: 1.45;
+      overflow-x: auto; white-space: pre;
+    }
+    pre.bibtex.open { display: block; }
 
-        /* Contact Info Bar */
-        .contact-bar {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
+    /* Education */
+    .edu { padding: 8px 0; display: flex; justify-content: space-between; gap: 16px; }
+    .edu .when { color: var(--muted); white-space: nowrap; }
+    .edu .detail { color: var(--muted); }
 
-        .contact-bar a {
-            color: #666;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s;
-        }
+    .skills p { margin: 4px 0; }
 
-        .contact-bar a:hover {
-            color: #0066cc;
-        }
+    footer {
+      margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .theme-btn {
+      font: inherit; font-size: 13px; color: var(--muted); background: none;
+      border: 1px solid var(--border); border-radius: 6px; padding: 2px 10px; cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--text); }
 
-        .contact-bar i {
-            font-size: 1rem;
-        }
-
-        /* Main Content */
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #000;
-            font-weight: 600;
-        }
-
-        .section p {
-            margin-bottom: 1rem;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        /* News Section */
-        .news-section {
-            background-color: #fafafa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 3rem;
-        }
-
-        .news-section h2 {
-            color: #d32f2f;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .news-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .news-section li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .news-section li::before {
-            content: "•";
-            color: #d32f2f;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .news-section .date {
-            font-weight: 600;
-            color: #666;
-        }
-
-        /* Research/Projects Section */
-        .research-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .research-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #0066cc;
-        }
-
-        .research-item .authors {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .research-item .venue {
-            color: #333;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .research-item .links {
-            margin-top: 0.5rem;
-        }
-
-        .research-item .links a {
-            color: #0066cc;
-            text-decoration: none;
-            margin-right: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .research-item .links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Education Section */
-        .education-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 3px solid #0066cc;
-        }
-
-        .education-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            color: #000;
-        }
-
-        .education-item .institution {
-            color: #666;
-            font-weight: 500;
-        }
-
-        .education-item .details {
-            color: #666;
-            font-size: 0.95rem;
-            margin-top: 0.3rem;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid #e0e0e0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .footer a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .contact-bar {
-                gap: 1rem;
-            }
-        }
-    </style>
+    @media (max-width: 680px) {
+      .intro { flex-direction: column-reverse; gap: 20px; }
+      .photo { flex-basis: auto; width: 55%; max-width: 220px; }
+      .name { font-size: 28px; }
+      .entry { flex-direction: column; gap: 10px; }
+      .thumb, .thumb img, .thumb .placeholder { width: 100%; flex-basis: auto; }
+      .thumb img, .thumb .placeholder { height: auto; max-height: 200px; aspect-ratio: 20 / 13; }
+      .edu { flex-direction: column; gap: 0; }
+      .news li { flex-direction: column; gap: 0; }
+      .news .date { flex-basis: auto; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1>Mohammad Hafeez Khan</h1>
-            <p class="tagline">
-                MSc Artificial Intelligence student at University of Amsterdam, passionate about developing ML solutions for real-world problems.
-            </p>
-            <div class="contact-bar">
-                <a href="#">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Amsterdam, Netherlands</span>
-                </a>
-                <a href="mailto:hafeezmhk6@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                </a>
-                <a href="https://github.com/hafeezmhk7" target="_blank">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/hafeez7634" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="hafeez-cv.pdf">
-                    <i class="fas fa-file-pdf"></i>
-                    <span>CV</span>
-                </a>
-            </div>
-        </header>
+  <main class="page">
 
-        <!-- About Me -->
-        <section class="section">
-            <h2>About me</h2>
-            <p>
-                I am Mohammad Hafeez Khan, currently pursuing my MSc in Artificial Intelligence at the University of Amsterdam (Sep 2024 - Sep 2026). 
-                My research interests lie at the intersection of Machine Learning, Natural Language Processing, and Computer Vision.
-            </p>
-            <p>
-                I have a strong foundation in data science and AI from my previous MSc in Data Science & Artificial Intelligence at Queen Mary University of London, 
-                where I graduated with Distinction. My work focuses on developing transformer-based models and deep learning solutions, 
-                particularly for low-resource language translation and computer vision applications.
-            </p>
-            <p>
-                I am passionate about solving complex problems through data-driven approaches and am particularly interested in making AI technologies 
-                more accessible and beneficial for underrepresented languages and communities.
-            </p>
-        </section>
+    <!-- ===================== Intro ===================== -->
+    <header class="intro">
+      <div class="intro-text">
+        <h1 class="name">Mohammad Hafeez Khan</h1>
+        <p>
+          I am a machine learning researcher interested in <strong>3D computer vision</strong>,
+          <strong>generative models</strong> and <strong>vision-language models</strong>.
+          I recently completed my MSc in Artificial Intelligence at the
+          <a href="https://www.uva.nl/en">University of Amsterdam</a>. My thesis,
+          supervised by Yue Li and Prof. Martin R. Oswald,
+          looked at semantic scene completion with latent generative models of scene-level 3D Gaussians.
+        </p>
+        <p>
+          At UvA I also worked on detecting AI-generated faces with CLIP and latent reconstruction errors
+          (ACM workshop paper), and on reproducing a mechanistic-interpretability study of how language models handle facts and counterfactuals
+          (<em>TMLR</em>). Before that, I completed an MSc in Data Science &amp; AI with Distinction at
+          <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a>, where I worked with
+          Prof. Shalom Lappin on transfer learning for low-resource Indic machine translation.
+          I first trained in physics, with a B.Tech in Engineering Physics from
+          <a href="https://www.nita.ac.in/">NIT Agartala</a>, where I ranked 2nd in my department.
+        </p>
+        <p>
+          My current interest is learning structured, generalisable representations of the 3D world:
+          generative models that understand scene layout and semantics, not just appearance.
+        </p>
+        <p style="text-align:center"><span class="status">I am looking for PhD positions starting in 2026&ndash;27.</span></p>
+        <div class="links">
+          <a href="mailto:hafeezmhk6@gmail.com">Email</a><span class="sep">/</span>
+          <a href="files/hafeez-cv.pdf">CV</a><span class="sep">/</span>
+          <a href="https://scholar.google.com/citations?user=b4gHHogAAAAJ&amp;hl=en">Google Scholar</a><span class="sep">/</span>
+          <a href="https://github.com/hafeezmhk7">GitHub</a><span class="sep">/</span>
+          <a href="https://linkedin.com/in/hafeez7634">LinkedIn</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="images/hafeez.jpg" alt="Photo of Mohammad Hafeez Khan">
+      </div>
+    </header>
 
-        <!-- News -->
-        <section class="news-section">
-            <h2>🔴 News:</h2>
-            <ul>
-                <li><span class="date">Sept. 2024:</span> Started my MSc in Artificial Intelligence at University of Amsterdam with current GPA of 8.3/10</li>
-                <li><span class="date">Aug. 2024:</span> Completed multilingual NMT project for low-resource Indian languages using transformer models</li>
-                <li><span class="date">July 2024:</span> Graduated with Distinction from Queen Mary University of London, MSc Data Science & AI</li>
-                <li><span class="date">May 2024:</span> Achieved 90% accuracy on CIFAR-10 image classification using custom CNN architecture</li>
-            </ul>
-        </section>
+    <!-- ===================== News ===================== -->
+    <section>
+      <h2>News</h2>
+      <ul class="news">
+        <li><span class="date">Oct 2026</span><span>I am looking for PhD positions in 3D vision and generative modelling. Feel free to <a href="mailto:hafeezmhk6@gmail.com">get in touch</a>.</span></li>
+        <li><span class="date">2026</span><span>Completed my MSc AI thesis at UvA on <a href="#uva-thesis">semantic scene completion with latent 3D Gaussians</a>.</span></li>
+        <li><span class="date">Oct 2025</span><span><a href="#clare">CLaRE</a> was published at the 1st ACM Workshop on Deepfake, Deception, and Disinformation Security (3D-Sec), Taipei.</span></li>
+        <li><span class="date">2025</span><span>Our reproduction study of <a href="#tmlr">Competition of Mechanisms</a> was published in <em>Transactions on Machine Learning Research</em>.</span></li>
+        <li><span class="date">Sep 2024</span><span>Started my MSc in Artificial Intelligence at the University of Amsterdam.</span></li>
+      </ul>
+    </section>
 
-        <!-- Education -->
-        <section class="section">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>MSc in Artificial Intelligence</h3>
-                <div class="institution">University of Amsterdam</div>
-                <div class="details">
-                    Sep 2024 - Sep 2026 | Grade: 8.3/10<br>
-                    Relevant Coursework: Machine Learning, Computer Vision, Deep Learning, Natural Language Processing
-                </div>
-            </div>
-            <div class="education-item">
-                <h3>MSc Data Science & Artificial Intelligence</h3>
-                <div class="institution">Queen Mary University of London</div>
-                <div class="details">
-                    Graduated with Distinction<br>
-                    Key Subjects: Python Programming, Advanced Statistics, Machine Learning, Deep Learning & Neural Networks
-                </div>
-            </div>
-        </section>
+    <!-- ===================== Publications ===================== -->
+    <section>
+      <h2>Publications</h2>
 
-        <!-- Research Projects -->
-        <section class="section">
-            <h2>Research Projects</h2>
-            
-            <div class="research-item">
-                <h3>Multilingual Neural Machine Translation for Low-Resource Indian Languages</h3>
-                <div class="authors">Mohammad Hafeez Khan</div>
-                <div class="venue">MSc Research Project, 2024</div>
-                <p>
-                    Developed a transformer-based NMT system using PyTorch and HuggingFace for translating low-resource Indian languages 
-                    (Bodo, Dogri, Maithili, and Konkani). Implemented transfer learning techniques and achieved significant improvements 
-                    in BLEU scores compared to baseline models.
-                </p>
-                <div class="links">
-                    <a href="#">Code (Coming Soon)</a>
-                    <a href="#">Paper</a>
-                </div>
-            </div>
+      <div class="entry featured" id="clare">
+        <div class="thumb"><img src="images/clare.jpg" alt="CLaRE pipeline diagram" loading="lazy"></div>
+        <div class="entry-body">
+          <div class="title"><a href="https://doi.org/10.1145/3733813.3764366">CLaRE: CLIP with Latent Reconstruction Errors for Generated Face Detection</a></div>
+          <div class="authors">Udit Thakur, <span class="me">Mohammad Hafeez Khan</span>, Meher Changlani, Asen Dotsinski, Aswin Krishna Mahadevan, Ioannis Kechagias, Ivona Najdenkoska</div>
+          <div class="venue">Proceedings of the 1st ACM Workshop on Deepfake, Deception, and Disinformation Security (3D-Sec), 2025</div>
+          <div class="entry-links">
+            <a href="https://doi.org/10.1145/3733813.3764366">paper</a><span class="sep">/</span>
+            <a href="https://github.com/2t2c/CLaRE">code</a><span class="sep">/</span>
+            <button class="bib-toggle" type="button" data-target="bib-clare">bibtex</button>
+          </div>
+          <p>We add latent reconstruction-error (LaRE) features to CLIP through a cross-attention fusion module and learnable prompts (CoOp/CoCoOp) to detect AI-generated faces. On DF40 it reaches 78.3% mean accuracy, 1.5 points above prompt-tuning baselines, with the largest gains on unseen generators such as MidJourney and StarGANv2.</p>
+<pre class="bibtex" id="bib-clare">@inproceedings{thakur2025clare,
+  title     = {CLaRE: CLIP with Latent Reconstruction Errors for Generated Face Detection},
+  author    = {Thakur, Udit and Khan, Mohammad Hafeez and Changlani, Meher and Dotsinski, Asen
+               and Mahadevan, Aswin Krishna and Kechagias, Ioannis and Najdenkoska, Ivona},
+  booktitle = {Proceedings of the 1st ACM Workshop on Deepfake, Deception, and Disinformation Security},
+  year      = {2025},
+  publisher = {ACM},
+  doi       = {10.1145/3733813.3764366}
+}</pre>
+        </div>
+      </div>
 
-            <div class="research-item">
-                <h3>CIFAR-10 Image Classification with Custom CNN Architecture</h3>
-                <div class="authors">Mohammad Hafeez Khan</div>
-                <div class="venue">Computer Vision Project, 2024</div>
-                <p>
-                    Designed and implemented a custom CNN architecture achieving 90% accuracy on CIFAR-10 dataset. 
-                    Explored various optimization techniques including batch normalization, dropout, and data augmentation. 
-                    Conducted extensive hyperparameter tuning to optimize model performance.
-                </p>
-                <div class="links">
-                    <a href="https://github.com/hafeezmhk7" target="_blank">GitHub</a>
-                </div>
-            </div>
+      <div class="entry featured" id="tmlr">
+        <div class="thumb"><div class="placeholder"><b>TMLR</b>Reproducibility study<br>GPT-2 &middot; Pythia &middot; Llama 3.1</div></div>
+        <div class="entry-body">
+          <div class="title"><a href="https://arxiv.org/abs/2506.22977">On the Generalizability of &ldquo;Competition of Mechanisms: Tracing How Language Models Handle Facts and Counterfactuals&rdquo;</a></div>
+          <div class="authors">Asen Dotsinski, Udit Thakur, Marko Ivanov, <span class="me">Mohammad Hafeez Khan</span>, Maria Heuss</div>
+          <div class="venue">Transactions on Machine Learning Research (TMLR), 2025</div>
+          <div class="entry-links">
+            <a href="https://arxiv.org/abs/2506.22977">arXiv</a><span class="sep">/</span>
+            <a href="https://openreview.net/forum?id=15keyzQj9h">OpenReview</a><span class="sep">/</span>
+            <button class="bib-toggle" type="button" data-target="bib-tmlr">bibtex</button>
+          </div>
+          <p>We reproduce Ortu et al. (2024) on GPT-2 and Pythia 6.9B and test whether its findings carry over. On Llama 3.1 8B, attention-head specialisation is much weaker. Small prompt changes, such as not repeating the counterfactual verbatim, sharply weaken the counterfactual mechanism. The effect also depends on the prompt's domain.</p>
+<pre class="bibtex" id="bib-tmlr">@article{dotsinski2025generalizability,
+  title   = {On the Generalizability of "Competition of Mechanisms: Tracing How Language Models
+             Handle Facts and Counterfactuals"},
+  author  = {Dotsinski, Asen and Thakur, Udit and Ivanov, Marko and Khan, Mohammad Hafeez and Heuss, Maria},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2025},
+  url     = {https://openreview.net/forum?id=15keyzQj9h}
+}</pre>
+        </div>
+      </div>
+    </section>
 
-            <div class="research-item">
-                <h3>Deep Learning for Medical Image Analysis</h3>
-                <div class="authors">Mohammad Hafeez Khan</div>
-                <div class="venue">Ongoing Research</div>
-                <p>
-                    Currently exploring the application of vision transformers and CNNs for medical image segmentation and classification tasks. 
-                    Focus on developing robust models for disease detection with limited labeled data.
-                </p>
-            </div>
-        </section>
+    <!-- ===================== Theses ===================== -->
+    <section>
+      <h2>Theses</h2>
 
-        <!-- Skills -->
-        <section class="section">
-            <h2>Technical Skills</h2>
-            <p>
-                <strong>Programming Languages:</strong> Python, R, SQL, JavaScript, HTML/CSS<br>
-                <strong>ML/DL Frameworks:</strong> PyTorch, TensorFlow, HuggingFace Transformers, Scikit-learn, Keras<delim>
-                <strong>Tools & Technologies:</strong> Git, Docker, AWS, Google Cloud, Jupyter, Weights & Biases<br>
-                <strong>Research Areas:</strong> Natural Language Processing, Computer Vision, Deep Learning, Transfer Learning, Multilingual Models
-            </p>
-        </section>
+      <div class="entry" id="uva-thesis">
+        <div class="thumb"><img src="images/uva-thesis.jpg" alt="Two-stage pipeline: scene VAE and flow-matching generator" loading="lazy"></div>
+        <div class="entry-body">
+          <div class="title"><a href="files/msc-thesis-uva.pdf">Semantic Scene Completion with Latent Modeling of Scene-Level 3D Gaussians</a></div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">MSc Thesis, Artificial Intelligence, University of Amsterdam, 2026</div>
+          <div class="authors">Supervisors: Yue Li, Prof. Martin R. Oswald &middot; Examiner: Dr. Shaodi You</div>
+          <div class="entry-links"><a href="files/msc-thesis-uva.pdf">thesis (pdf)</a></div>
+          <p>This thesis studies the standard two-stage recipe (a VAE that compresses a scene, then a flow-matching generator in its latent space) on thousands of unfiltered indoor 3DGS scenes from SceneSplat-7K. A seven-variant ablation shows that two choices decide whether the autoencoder generalises or memorises: fixed-frame Hilbert ordering of the Gaussians, and a windowed local encoder with a token-local decoder. Together they more than halve validation reconstruction error. A hierarchical layout-then-geometry flow-matching model reproduces the latent structure and recovers coarse layout from partial scans.</p>
+        </div>
+      </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© 2025 Mohammad Hafeez Khan. Built with HTML, CSS, and JavaScript.</p>
-            <p>
-                <a href="https://github.com/hafeezmhk7" target="_blank">GitHub</a> • 
-                <a href="https://linkedin.com/in/hafeez7634" target="_blank">LinkedIn</a> • 
-                <a href="mailto:hafeezmhk6@gmail.com">Email</a>
-            </p>
-        </footer>
-    </div>
+      <div class="entry" id="qmul-thesis">
+        <div class="thumb"><img src="images/qmul-thesis.jpg" alt="Fine-tuning pipeline for multilingual NMT" loading="lazy"></div>
+        <div class="entry-body">
+          <div class="title"><a href="files/msc-thesis-qmul.pdf">Transfer Learning Based Multilingual Neural Machine Translation for Low Resource Indic Languages</a></div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">MSc Thesis, Data Science &amp; AI, Queen Mary University of London, 2023 <span class="badge">Distinction</span></div>
+          <div class="authors">Supervisor: Prof. Shalom Lappin</div>
+          <div class="entry-links"><a href="files/msc-thesis-qmul.pdf">thesis (pdf)</a></div>
+          <p>A many-to-one translation model for Bodo, Dogri, Konkani and Maithili into English, built by fine-tuning mBART-50 and exploiting lexical similarity with related high-resource languages. On the IN22-Gen benchmark it reaches BLEU scores of 29 (Bodo), 40 (Dogri), 26 (Konkani) and 33 (Maithili).</p>
+        </div>
+      </div>
+
+      <div class="entry" id="btech-thesis">
+        <div class="thumb"><div class="placeholder"><b>B.Tech</b>Engineering Physics<br>NIT Agartala</div></div>
+        <div class="entry-body">
+          <div class="title">Organic&ndash;Inorganic Semiconductors: Effect of Cadmium Sulfide on the Electrical and Optical Properties of Polyaniline</div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">B.Tech Thesis, Engineering Physics, National Institute of Technology Agartala, 2020</div>
+          <p>Synthesis and characterisation of polyaniline and its composites with cadmium sulfide, studying how CdS changes the polymer's electrical and optical behaviour. The work was presented and written up as a 40-page report.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Research experience & projects ===================== -->
+    <section>
+      <h2>Research Experience &amp; Projects</h2>
+
+      <div class="entry" id="inst">
+        <div class="thumb"><img src="images/inst.jpg" alt="Upconversion emission spectra for varying Er concentration" loading="lazy"></div>
+        <div class="entry-body">
+          <div class="title"><a href="files/inst-internship-report.pdf">Synthesis and Characterization of NaLa(MoO<sub>4</sub>)<sub>2</sub>:Er<sup>3+</sup>,Yb<sup>3+</sup> Nanomaterials and their Upconversion Photoluminescence Properties</a></div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">Summer Research Internship, Institute of Nano Science and Technology (INST), Mohali, Jun&ndash;Jul 2019</div>
+          <div class="authors">Supervisor: Dr. Sanyasinaidu Boddu</div>
+          <div class="entry-links"><a href="files/inst-internship-report.pdf">report (pdf)</a></div>
+          <p>Synthesised Er<sup>3+</sup>/Yb<sup>3+</sup> co-doped NaLa(MoO<sub>4</sub>)<sub>2</sub> nanophosphors by room-temperature co-precipitation and characterised their structure and phase purity. Under 980&nbsp;nm excitation they show green (525, 552&nbsp;nm) and red (652&nbsp;nm) upconversion emission, which is strongest at 3% Er<sup>3+</sup> and 8% Yb<sup>3+</sup>.</p>
+        </div>
+      </div>
+
+      <div class="entry" id="audio">
+        <div class="thumb"><div class="placeholder"><b>Audio ML</b>Environmental sound<br>classification</div></div>
+        <div class="entry-body">
+          <div class="title">Classification of Environmental Audio Data</div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">Course project, Queen Mary University of London, 2022</div>
+          <p>An end-to-end machine learning pipeline that classifies environmental audio into five categories, with hand-crafted features covering power, loudness and spectral content. The dataset (&ldquo;Mile End Campus&rdquo;) was collected by QMUL students, including me.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Education ===================== -->
+    <section>
+      <h2>Education</h2>
+      <div class="edu">
+        <div><strong>MSc Artificial Intelligence</strong>, University of Amsterdam<br><span class="detail">Thesis on latent generative modelling of 3D Gaussian scenes</span></div>
+        <div class="when">2024 &ndash; 2026</div>
+      </div>
+      <div class="edu">
+        <div><strong>MSc Data Science &amp; Artificial Intelligence</strong>, Queen Mary University of London<br><span class="detail">Distinction</span></div>
+        <div class="when">2022 &ndash; 2023</div>
+      </div>
+      <div class="edu">
+        <div><strong>B.Tech Engineering Physics</strong>, National Institute of Technology Agartala<br><span class="detail">CGPA 8.13/10 &middot; Rank 2 in department</span></div>
+        <div class="when">2016 &ndash; 2020</div>
+      </div>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section class="skills">
+      <h2>Skills</h2>
+      <p><strong>Research areas:</strong> 3D Gaussian Splatting, latent generative models (VAEs, flow matching, diffusion), vision-language models, generated-image detection, interpretability, multilingual NMT</p>
+      <p><strong>Tools:</strong> Python, PyTorch, Hugging Face Transformers, scikit-learn, NumPy/Pandas, Weights &amp; Biases, Git, SLURM/GPU clusters</p>
+      <p><strong>Languages:</strong> English, Hindi</p>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Mohammad Hafeez Khan. Layout inspired by <a href="https://github.com/jonbarron/website">Jon Barron&rsquo;s website</a>.</span>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="Toggle dark mode">Toggle theme</button>
+    </footer>
+  </main>
+
+  <script>
+    document.querySelectorAll('.bib-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.getElementById(btn.dataset.target).classList.toggle('open');
+      });
+    });
+
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) root.setAttribute('data-theme', saved);
+      } catch (e) {}
+      document.getElementById('theme-btn').addEventListener('click', function () {
+        var current = root.getAttribute('data-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>
