@@ -166,27 +166,28 @@
       <div class="intro-text">
         <h1 class="name">Mohammad Hafeez Khan</h1>
         <p>
-          I am a machine learning researcher interested in <strong>3D computer vision</strong>,
-          <strong>generative models</strong> and <strong>vision-language models</strong>.
-          I recently completed my MSc in Artificial Intelligence at the
-          <a href="https://www.uva.nl/en">University of Amsterdam</a>. My thesis,
-          supervised by Yue Li and Prof. Martin R. Oswald,
-          looked at semantic scene completion with latent generative models of scene-level 3D Gaussians.
+          I work on <strong>computer vision</strong>, mainly on <strong>learned representations of 3D scenes</strong>.
+          From 2024 to 2026 I was at the <a href="https://www.uva.nl/en">University of Amsterdam</a>, where my main project,
+          with Yue Li and Prof. Martin R. Oswald, was an autoencoder over 3D Gaussian Splatting scenes:
+          it compresses a scene into a compact latent and decodes it back. I also built the differentiable rendering
+          pipeline that supervises it in image space, working through camera poses, intrinsics and rendered depth myself.
         </p>
         <p>
           At UvA I also worked on detecting AI-generated faces with CLIP and latent reconstruction errors
-          (ACM workshop paper), and on reproducing a mechanistic-interpretability study of how language models handle facts and counterfactuals
-          (<em>TMLR</em>). Before that, I completed an MSc in Data Science &amp; AI with Distinction at
-          <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a>, where I worked with
-          Prof. Shalom Lappin on transfer learning for low-resource Indic machine translation.
-          I first trained in physics, with a B.Tech in Engineering Physics from
-          <a href="https://www.nita.ac.in/">NIT Agartala</a>, where I ranked 2nd in my department.
+          (ACM workshop paper), on a mechanistic-interpretability reproduction study of how language models handle
+          facts and counterfactuals (<em>TMLR</em>), on diffusion transformers and on multi-modal generative recommendation.
+          Before that, I completed an MSc in Data Science &amp; AI with Distinction at
+          <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a>, working with
+          Prof. Shalom Lappin on low-resource machine translation.
         </p>
         <p>
-          My current interest is learning structured, generalisable representations of the 3D world:
-          generative models that understand scene layout and semantics, not just appearance.
+          My first degree is a B.Tech in Engineering Physics from <a href="https://www.nita.ac.in/">NIT Agartala</a>
+          (ranked 2nd in my department). There, and during a summer internship at INST Mohali, I characterised materials
+          with X-ray diffraction and UV-visible spectroscopy, so imaging physics is familiar ground.
+          I prefer problems where the method has to work on real measured data, and I am interested in supervising
+          3D representations through the imaging process itself rather than on their raw parameters.
         </p>
-        <p style="text-align:center"><span class="status">I am looking for PhD positions starting in 2026&ndash;27.</span></p>
+        <p style="text-align:center"><span class="status">I am looking for PhD positions.</span></p>
         <div class="links">
           <a href="mailto:hafeezmhk6@gmail.com">Email</a><span class="sep">/</span>
           <a href="files/hafeez-cv.pdf">CV</a><span class="sep">/</span>
@@ -205,10 +206,10 @@
       <h2>News</h2>
       <ul class="news">
         <li><span class="date">Oct 2026</span><span>I am looking for PhD positions in 3D vision and generative modelling. Feel free to <a href="mailto:hafeezmhk6@gmail.com">get in touch</a>.</span></li>
-        <li><span class="date">2026</span><span>Completed my MSc AI thesis at UvA on <a href="#uva-thesis">semantic scene completion with latent 3D Gaussians</a>.</span></li>
+        <li><span class="date">2026</span><span>Image-space fine-tuning of my 3DGS scene autoencoder improved held-out reconstruction by 2.2&nbsp;dB PSNR. See <a href="#uva-thesis">scene completion with 3D Gaussians</a>.</span></li>
         <li><span class="date">Oct 2025</span><span><a href="#clare">CLaRE</a> was published at the 1st ACM Workshop on Deepfake, Deception, and Disinformation Security (3D-Sec), Taipei.</span></li>
         <li><span class="date">2025</span><span>Our reproduction study of <a href="#tmlr">Competition of Mechanisms</a> was published in <em>Transactions on Machine Learning Research</em>.</span></li>
-        <li><span class="date">Sep 2024</span><span>Started my MSc in Artificial Intelligence at the University of Amsterdam.</span></li>
+        <li><span class="date">Sep 2024</span><span>Joined the University of Amsterdam for the MSc programme in Artificial Intelligence.</span></li>
       </ul>
     </section>
 
@@ -220,8 +221,9 @@
         <div class="thumb"><img src="images/clare.jpg" alt="CLaRE pipeline diagram" loading="lazy"></div>
         <div class="entry-body">
           <div class="title"><a href="https://doi.org/10.1145/3733813.3764366">CLaRE: CLIP with Latent Reconstruction Errors for Generated Face Detection</a></div>
-          <div class="authors">Udit Thakur, <span class="me">Mohammad Hafeez Khan</span>, Meher Changlani, Asen Dotsinski, Aswin Krishna Mahadevan, Ioannis Kechagias, Ivona Najdenkoska</div>
-          <div class="venue">Proceedings of the 1st ACM Workshop on Deepfake, Deception, and Disinformation Security (3D-Sec), 2025</div>
+          <div class="authors">Udit Thakur*, <span class="me">Mohammad Hafeez Khan*</span>, Meher Changlani, Asen Dotsinski, Aswin Krishna Mahadevan, Ioannis Kechagias, Ivona Najdenkoska</div>
+          <div class="venue">Proceedings of the 1st ACM Workshop on Deepfake, Deception, and Disinformation Security (3D-Sec), co-located with ACM CCS 2025, Taipei</div>
+          <div class="authors" style="color:var(--muted);font-size:13px">* equal contribution</div>
           <div class="entry-links">
             <a href="https://doi.org/10.1145/3733813.3764366">paper</a><span class="sep">/</span>
             <a href="https://github.com/2t2c/CLaRE">code</a><span class="sep">/</span>
@@ -273,10 +275,12 @@
         <div class="entry-body">
           <div class="title"><a href="files/msc-thesis-uva.pdf">Semantic Scene Completion with Latent Modeling of Scene-Level 3D Gaussians</a></div>
           <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
-          <div class="venue">MSc Thesis, Artificial Intelligence, University of Amsterdam, 2026</div>
+          <div class="venue">Master&rsquo;s Thesis, Artificial Intelligence, University of Amsterdam, Jan&ndash;May 2026</div>
           <div class="authors">Supervisors: Yue Li, Prof. Martin R. Oswald &middot; Examiner: Dr. Shaodi You</div>
           <div class="entry-links"><a href="files/msc-thesis-uva.pdf">thesis (pdf)</a></div>
           <p>This thesis studies the standard two-stage recipe (a VAE that compresses a scene, then a flow-matching generator in its latent space) on thousands of unfiltered indoor 3DGS scenes from SceneSplat-7K. A seven-variant ablation shows that two choices decide whether the autoencoder generalises or memorises: fixed-frame Hilbert ordering of the Gaussians, and a windowed local encoder with a token-local decoder. Together they more than halve validation reconstruction error. A hierarchical layout-then-geometry flow-matching model reproduces the latent structure and recovers coarse layout from partial scans.</p>
+          <p>The project also showed why parameter-space supervision is ill-posed for 3DGS. A fixed decoder slot sees differently oriented surfaces across scenes, so the L2-optimal output collapses to an isotropic blob. The (scale, quaternion) parametrisation is also gauge-ambiguous, so L2 measures numeric rather than shape distance.</p>
+          <p><strong>Follow-up:</strong> I replaced the continuous latent with a discrete VQ-VAE supervised in image space. I built the depth-masked fine-tuning pipeline end to end: OpenCV-to-renderer pose conversion, normalised intrinsics for a wide-angle capture rig, metric depth rendered with gsplat, and a loader for the raw attribute format. Fine-tuning improved held-out reconstruction from 17.0 to 19.2&nbsp;dB PSNR, and LPIPS from 0.386 to 0.327.</p>
         </div>
       </div>
 
@@ -293,12 +297,14 @@
       </div>
 
       <div class="entry" id="btech-thesis">
-        <div class="thumb"><div class="placeholder"><b>B.Tech</b>Engineering Physics<br>NIT Agartala</div></div>
+        <div class="thumb"><img src="images/btech.jpg" alt="XRD patterns of PANI, CdS and PANI/CdS" loading="lazy"></div>
         <div class="entry-body">
-          <div class="title">Organic&ndash;Inorganic Semiconductors: Effect of Cadmium Sulfide on the Electrical and Optical Properties of Polyaniline</div>
+          <div class="title"><a href="files/btech-thesis-nit-agartala.pdf">Effect of Cadmium Sulphide on Electrical and Optical Properties of Polyaniline</a></div>
           <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
-          <div class="venue">B.Tech Thesis, Engineering Physics, National Institute of Technology Agartala, 2020</div>
-          <p>Synthesis and characterisation of polyaniline and its composites with cadmium sulfide, studying how CdS changes the polymer's electrical and optical behaviour. The work was presented and written up as a 40-page report.</p>
+          <div class="venue">B.Tech Thesis, Engineering Physics, National Institute of Technology Agartala, Jan&ndash;Jun 2020</div>
+          <div class="authors">Supervisor: Dr. Biswajit Saha</div>
+          <div class="entry-links"><a href="files/btech-thesis-nit-agartala.pdf">thesis (pdf)</a></div>
+          <p>Synthesised polyaniline/cadmium sulphide (PANI/CdS) nanocomposites by in-situ polymerisation and characterised them with X-ray diffraction, UV-visible absorption and I&ndash;V measurements. The CdS template orders the polymer chains, the absorption bands at 410 and 850&nbsp;nm confirm PANI's conducting phase, and the composite conducts 13 times better than pure PANI.</p>
         </div>
       </div>
     </section>
@@ -306,6 +312,28 @@
     <!-- ===================== Research experience & projects ===================== -->
     <section>
       <h2>Research Experience &amp; Projects</h2>
+
+      <div class="entry" id="blip3o">
+        <div class="thumb"><div class="placeholder"><b>DiT</b>EVA-CLIP &rarr; CLIP<br>rectified flow</div></div>
+        <div class="entry-body">
+          <div class="title">BLIP3-o DiT: Cross-Modal CLIP Embedding Reproduction</div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">Research project, University of Amsterdam, Jul&ndash;Aug 2025</div>
+          <div class="authors">Supervisor: Dr. Andrii Zadaianchuk</div>
+          <p>Built a Diffusion Transformer that replicates the BLIP3-o pipeline, generating CLIP embeddings from EVA-CLIP features. It uses 3D RoPE, Heun's solver, grouped-query attention and an EVA adapter for embedding-space alignment, and was trained with FSDP on Snellius H100 GPUs. With sandwich normalisation, layer scaling and rectified flow matching it reaches 89.89% CLIP similarity on training data and 88.76% on MS-COCO validation.</p>
+        </div>
+      </div>
+
+      <div class="entry" id="semantic-ids">
+        <div class="thumb"><div class="placeholder"><b>RecSys</b>CLIP + Sentence-T5<br>RQ-VAE semantic IDs</div></div>
+        <div class="entry-body">
+          <div class="title">Multi-Modal Semantic Item Identifiers for Generative Recommendation</div>
+          <div class="authors"><span class="me">Mohammad Hafeez Khan</span></div>
+          <div class="venue">Research project, University of Amsterdam, May&ndash;Dec 2025</div>
+          <div class="authors">Supervisor: Kidist Amde Mekonnen</div>
+          <p>Fused CLIP visual features with Sentence-T5 text embeddings before RQ-VAE quantisation, keeping the TIGER retriever fixed so that any change comes from the visual semantics alone. Across eight Amazon categories (2014 and 2023), images help a lot where appearance distinguishes items (Sports, Toys, Video Games) and little or not at all in text-centric ones such as Software. I also brought beyond-accuracy metrics (coverage, Gini exposure, user-level disparity) into the semantic-ID setting. They reveal a trade-off: broader catalogue coverage can come with more concentrated exposure.</p>
+        </div>
+      </div>
 
       <div class="entry" id="inst">
         <div class="thumb"><img src="images/inst.jpg" alt="Upconversion emission spectra for varying Er concentration" loading="lazy"></div>
@@ -334,15 +362,15 @@
     <section>
       <h2>Education</h2>
       <div class="edu">
-        <div><strong>MSc Artificial Intelligence</strong>, University of Amsterdam<br><span class="detail">Thesis on latent generative modelling of 3D Gaussian scenes</span></div>
+        <div><strong>MSc programme in Artificial Intelligence</strong>, University of Amsterdam<br><span class="detail">Coursework in machine learning, computer vision, deep learning and NLP; research on 3D scene representations</span></div>
         <div class="when">2024 &ndash; 2026</div>
       </div>
       <div class="edu">
-        <div><strong>MSc Data Science &amp; Artificial Intelligence</strong>, Queen Mary University of London<br><span class="detail">Distinction</span></div>
+        <div><strong>MSc Data Science &amp; Artificial Intelligence</strong>, Queen Mary University of London<br><span class="detail">Distinction (~85%)</span></div>
         <div class="when">2022 &ndash; 2023</div>
       </div>
       <div class="edu">
-        <div><strong>B.Tech Engineering Physics</strong>, National Institute of Technology Agartala<br><span class="detail">CGPA 8.13/10 &middot; Rank 2 in department</span></div>
+        <div><strong>B.Tech Engineering Physics</strong>, National Institute of Technology Agartala<br><span class="detail">CGPA 8.13/10 &middot; Rank 2/20 in department</span></div>
         <div class="when">2016 &ndash; 2020</div>
       </div>
     </section>
@@ -350,9 +378,11 @@
     <!-- ===================== Skills ===================== -->
     <section class="skills">
       <h2>Skills</h2>
-      <p><strong>Research areas:</strong> 3D Gaussian Splatting, latent generative models (VAEs, flow matching, diffusion), vision-language models, generated-image detection, interpretability, multilingual NMT</p>
-      <p><strong>Tools:</strong> Python, PyTorch, Hugging Face Transformers, scikit-learn, NumPy/Pandas, Weights &amp; Biases, Git, SLURM/GPU clusters</p>
-      <p><strong>Languages:</strong> English, Hindi</p>
+      <p><strong>3D &amp; imaging:</strong> 3D Gaussian Splatting (training, autoencoding, fine-tuning, evaluation), NeRF and point-based representations, differentiable rendering and image-space losses, depth rendering, camera intrinsics/extrinsics and pose conventions, multi-view geometry</p>
+      <p><strong>Generative models:</strong> VAEs, VQ-VAEs and residual quantisation, latent diffusion, flow matching and rectified flow, diffusion transformers, autoregressive transformers over discrete tokens</p>
+      <p><strong>Tools:</strong> Python, PyTorch, gsplat, Hugging Face Transformers, NumPy, scikit-learn, FSDP, HPC GPU clusters (H100, SLURM), Git</p>
+      <p><strong>Physics &amp; maths:</strong> electromagnetism, optics, X-ray diffraction and UV-visible spectroscopy, Fourier analysis and signal processing, probability, linear algebra, information theory</p>
+      <p><strong>Languages:</strong> English (fluent), Hindi (native)</p>
     </section>
 
     <footer>
